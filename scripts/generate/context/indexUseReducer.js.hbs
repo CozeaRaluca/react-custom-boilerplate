@@ -1,0 +1,53 @@
+import React, {
+  createContext,
+  useContext,
+  useReducer,
+} from 'react';
+
+import {{camelCase name}}Reducer from './reducer';
+import { setData } from './actions';
+
+const {{properCase name}}StateContext = createContext();
+const {{properCase name}}DispatchContext = createContext();
+
+const initialState = {};
+
+function {{properCase name}}Provider({ children }) {
+  const [state, dispatch] = useReducer({{camelCase name}}Reducer, initialState);
+
+  return (
+    <{{properCase name}}StateContext.Provider value={state}>
+      <{{properCase name}}DispatchContext.Provider value={dispatch}>
+        {children}
+      </{{properCase name}}DispatchContext.Provider>
+    </{{properCase name}}StateContext.Provider>
+  );
+}
+
+function use{{properCase name}}State() {
+  const context = useContext({{properCase name}}StateContext);
+
+  if (context === undefined) {
+    throw new Error('use{{properCase name}}State must be used within a {{properCase name}}Provider');
+  }
+
+  return context;
+}
+
+function use{{properCase name}}Dispatch() {
+  const context = useContext({{properCase name}}DispatchContext);
+
+  if (context === undefined) {
+    throw new Error('use{{properCase name}}Dispatch must be used within a {{properCase name}}Provider');
+  }
+
+  return context;
+}
+
+export {
+  {{properCase name}}Provider,
+  use{{properCase name}}State,
+  use{{properCase name}}Dispatch,
+  // actions
+  setData,
+};

@@ -49,7 +49,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "resolve": "1.15.0",
-    "resolve-url-loader": "3.1.1",
+    "resolve-url-loader": "^3.1.2",
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
     "style-loader": "0.23.1",
@@ -64,7 +64,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "generate": "plop --plopfile scripts/generate/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -135,5 +136,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "plop": "^2.7.4"
   }
 }

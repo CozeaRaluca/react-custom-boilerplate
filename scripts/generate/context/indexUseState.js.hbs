@@ -1,0 +1,32 @@
+import React, {
+  createContext,
+  useContext,
+  useState,
+} from 'react';
+
+const {{properCase name}}Context = createContext();
+
+function {{properCase name}}Provider({ children }) {
+  const [data, setData] = useState();
+
+  return (
+    <{{properCase name}}Context.Provider value={{ data, setData }}>
+      {children}
+    </{{properCase name}}Context.Provider>
+  );
+}
+
+function use{{properCase name}}() {
+  const context = useContext({{properCase name}}Context);
+
+  if (context === undefined) {
+    throw new Error('use{{properCase name}} must be used within a {{properCase name}}Provider');
+  }
+
+  return context;
+}
+
+export {
+  {{properCase name}}Provider,
+  use{{properCase name}},
+};
