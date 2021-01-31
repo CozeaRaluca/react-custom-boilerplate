@@ -10,7 +10,7 @@ function {{properCase name}}Provider({ children }) {
   const [data, setData] = useState();
 
   return (
-    <{{properCase name}}Context.Provider value={{ data, setData }}>
+    <{{properCase name}}Context.Provider value={ { data, setData }}>
       {children}
     </{{properCase name}}Context.Provider>
   );

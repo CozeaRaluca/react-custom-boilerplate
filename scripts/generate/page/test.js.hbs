@@ -3,6 +3,8 @@ import { render } from '@testing-library/react';
 
 import {{properCase name}} from './{{properCase name}}';
 
-test('test {{ properCase name }}', () => {
-  expect(true).toBe(false);
+test('{{ properCase name }} is in document', () => {
+  const { getByTestId } = render(<{{properCase name}} />);
+
+  expect(getByTestId('{{dashCase name}}')).toBeInTheDocument();
 });
