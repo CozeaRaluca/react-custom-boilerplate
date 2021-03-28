@@ -37,32 +37,30 @@ module.exports = {
     ];
 
     if (data.wantReducer) {
-      actions.push([
-        {
-          type: 'add',
-          path: '../../src/contexts{{path}}{{properCase name}}/index.js',
-          templateFile: './context/indexUseReducer.js.hbs',
-          abortOnFail: true,
-        },
-        {
-          type: 'add',
-          path: '../../src/contexts{{path}}{{properCase name}}/reducer.js',
-          templateFile: './context/reducer.js.hbs',
-          abortOnFail: true,
-        },
-        {
-          type: 'add',
-          path: '../../src/contexts{{path}}{{properCase name}}/actions.js',
-          templateFile: './context/actions.js.hbs',
-          abortOnFail: true,
-        },
-        {
-          type: 'add',
-          path: '../../src/contexts{{path}}{{properCase name}}/constants.js',
-          templateFile: './context/constants.js.hbs',
-          abortOnFail: true,
-        },
-      ]);
+      actions.push({
+        type: 'add',
+        path: '../../src/contexts{{path}}{{properCase name}}/index.js',
+        templateFile: './context/indexUseReducer.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/contexts{{path}}{{properCase name}}/reducer.js',
+        templateFile: './context/reducer.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/contexts{{path}}{{properCase name}}/actions.js',
+        templateFile: './context/actions.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/contexts{{path}}{{properCase name}}/constants.js',
+        templateFile: './context/constants.js.hbs',
+        abortOnFail: true,
+      });
     } else {
       actions.push({
         type: 'add',

@@ -2,15 +2,20 @@ import React, {
   createContext,
   useContext,
   useState,
+  useMemo,
 } from 'react';
 
 const {{properCase name}}Context = createContext();
 
 function {{properCase name}}Provider({ children }) {
   const [data, setData] = useState();
+  const providerValue = useMemo(() => ({
+    data,
+    setData,
+  }), [data, setData]);
 
   return (
-    <{{properCase name}}Context.Provider value={ { data, setData }}>
+    <{{properCase name}}Context.Provider value={providerValue}>
       {children}
     </{{properCase name}}Context.Provider>
   );

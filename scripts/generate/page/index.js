@@ -5,19 +5,8 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'What should it be called?',
-      default: 'Wrapper',
+      default: 'Home',
       validate: value => value ? true : 'The name is required.',
-    },
-    {
-      type: 'input',
-      name: 'path',
-      message: 'Construct the path. (should start and end with /)',
-      default: '/',
-      validate: value => {
-        const pathPattern = /^\/([a-z]([A-Za-z/])*\/)*$/g;
-
-        return pathPattern.test(value);
-      },
     },
     {
       type: 'confirm',
@@ -30,19 +19,19 @@ module.exports = {
     const actions = [
       {
         type: 'add',
-        path: '../../src/pages{{path}}{{properCase name}}/index.js',
+        path: '../../src/pages/{{properCase name}}/index.js',
         templateFile: './page/index.js.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../src/pages{{path}}{{properCase name}}/{{properCase name}}.js',
+        path: '../../src/pages/{{properCase name}}/{{properCase name}}.js',
         templateFile: './page/view.js.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../src/pages{{path}}{{properCase name}}/index.test.js',
+        path: '../../src/pages/{{properCase name}}/{{properCase name}}.test.js',
         templateFile: './page/test.js.hbs',
         abortOnFail: true,
       },
@@ -51,7 +40,7 @@ module.exports = {
     if (data.wantStyles) {
       actions.push({
         type: 'add',
-        path: '../../src/pages{{path}}{{properCase name}}/{{properCase name}}.css',
+        path: '../../src/pages/{{properCase name}}/{{properCase name}}.css',
         templateFile: './page/styles.css.hbs',
         abortOnFail: true,
       });
