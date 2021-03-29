@@ -10,10 +10,10 @@ import { setData } from './actions';
 const {{properCase name}}StateContext = createContext();
 const {{properCase name}}DispatchContext = createContext();
 
-const initialState = {};
+const defaultState = {};
 
-function {{properCase name}}Provider({ children }) {
-  const [state, dispatch] = useReducer({{camelCase name}}Reducer, initialState);
+function {{properCase name}}Provider({ children, initialState }) {
+  const [state, dispatch] = useReducer({{camelCase name}}Reducer, initialState || defaultState);
 
   return (
     <{{properCase name}}StateContext.Provider value={state}>

@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import {{properCase name}} from './{{properCase name}}';
 
 test('{{ properCase name }} is in document', () => {
-  const { getByTestId } = render(<{{properCase name}} />);
+  const { queryByTestId } = render(<{{properCase name}} />);
 
-  expect(getByTestId('{{dashCase name}}')).toBeInTheDocument();
+  expect(queryByTestId('{{dashCase name}}')).toBeInTheDocument();
 });

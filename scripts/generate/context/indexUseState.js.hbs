@@ -7,8 +7,8 @@ import React, {
 
 const {{properCase name}}Context = createContext();
 
-function {{properCase name}}Provider({ children }) {
-  const [data, setData] = useState();
+function {{properCase name}}Provider({ children, initialState }) {
+  const [data, setData] = useState(initialState);
   const providerValue = useMemo(() => ({
     data,
     setData,
