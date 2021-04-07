@@ -65,7 +65,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "generate": "plop --plopfile scripts/generate/index.js"
+    "generate": "plop --plopfile scripts/generate/index.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -138,6 +140,10 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.2.1",
+    "@storybook/addon-essentials": "^6.2.1",
+    "@storybook/addon-links": "^6.2.1",
+    "@storybook/react": "^6.2.1",
     "plop": "^2.7.4"
   }
 }

@@ -6,4 +6,6 @@ module.exports = plop => {
   plop.setGenerator('component', componentGenerator);
   plop.setGenerator('context', contextGenerator);
   plop.setGenerator('page', pageGenerator);
+  plop.setHelper('leftCurlyBracket', () => '{');
+  plop.setHelper('rightCurlyBracket', () => '}');
 };

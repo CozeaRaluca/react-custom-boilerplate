@@ -25,6 +25,12 @@ module.exports = {
       message: 'Do you need custom styles?',
       default: false,
     },
+    {
+      type: 'confirm',
+      name: 'wantStories',
+      message: 'Do you want to add stories?',
+      default: false,
+    },
   ],
   actions: (data) => {
     const actions = [
@@ -53,6 +59,15 @@ module.exports = {
         type: 'add',
         path: '../../src/components{{path}}{{properCase name}}/{{properCase name}}.css',
         templateFile: './component/styles.css.hbs',
+        abortOnFail: true,
+      });
+    }
+
+    if (data.wantStories) {
+      actions.push({
+        type: 'add',
+        path: '../../src/components{{path}}{{properCase name}}/{{properCase name}}.stories.mdx',
+        templateFile: './component/stories.mdx.hbs',
         abortOnFail: true,
       });
     }
