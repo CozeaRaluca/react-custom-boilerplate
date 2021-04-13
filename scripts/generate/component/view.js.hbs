@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+{{#if wantStyles}}
+import './{{properCase name}}.css';
+
+{{/if}}
 const {{properCase name}} = (props) => {
   return (
     <div
